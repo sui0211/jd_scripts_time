@@ -1,11 +1,8 @@
 # jd_scripts_time
 京东临时库，从几个仓库的watch中整理，会自动更新到车上
 
-## 脚本来源（可以添加watch）
+# 脚本监控（添加watch或者删除本地后手动拉取）
 https://github.com/shufflewzc/faker2
-https://github.com/smiek2121/scripts
-https://github.com/inoyna12/JDsc
-https://github.com/ccwav/QLScript2
 https://github.com/wsn888/jd.git（这个库只更新新活动）
 
 ### 新脚本增加代理ip设置

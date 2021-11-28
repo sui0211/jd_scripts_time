@@ -24,7 +24,9 @@ cron "3 0-23/1 * * *" script-path=https://raw.githubusercontent.com/nianyuguai/l
 ============小火箭=========
 整点京豆雨= type=cron,script-path=https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js, cronexpr="3 0-23/1 * * *",timeout=200, enable=true
  */
-const $ = new Env('整点京豆雨');
+const name = new Env('整点京豆雨');  // 拉取脚本时定时任务命名
+const myEnv = require('./myEnv.js')
+const $ = new myEnv.Env('整点京豆雨');
 
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;

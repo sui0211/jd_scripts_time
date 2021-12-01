@@ -16,7 +16,7 @@ let cookiesArr = [], cookie = '', message;
 let status=''
 
 let inviteCodes = []
-let leng = 2 //助力前几名账号
+let leng = 3 //助力前几名账号
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {

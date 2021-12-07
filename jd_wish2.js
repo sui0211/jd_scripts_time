@@ -100,7 +100,14 @@ if ($.isNode()) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            let getHomeDataRes = (await healthyDay_getHomeData(false)).data.result.userInfo
+            let getHomeDataRes;
+            try {
+                getHomeDataRes = (await healthyDay_getHomeData(false)).data.result.userInfo
+            }
+            catch (e) {
+                console.log('该账号异常，进行下一个账户！')
+                continue
+            }
             if (getHomeDataRes.lotteryNum != 0) {
                 console.log("开始抽奖");
                 for (let i = 0; i < getHomeDataRes.lotteryNum; i++) {

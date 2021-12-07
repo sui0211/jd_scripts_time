@@ -100,21 +100,17 @@ if ($.isNode()) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            let getHomeDataRes;
-            try {
-                getHomeDataRes = (await healthyDay_getHomeData(false)).data.result.userInfo
-            }
-            catch (e) {
-                console.log('该账号异常，进行下一个账户！')
-                continue
-            }
-            if (getHomeDataRes.lotteryNum != 0) {
-                console.log("开始抽奖");
-                for (let i = 0; i < getHomeDataRes.lotteryNum; i++) {
-                    await interact_template_getLotteryResult();
+            let data = (await healthyDay_getHomeData(false))
+            if(data && data.data.result && data.data.result.userInfo){
+                let getHomeDataRes = data.data.result.userInfo
+                if (getHomeDataRes.lotteryNum != 0) {
+                    console.log("开始抽奖");
+                    for (let i = 0; i < getHomeDataRes.lotteryNum; i++) {
+                        await interact_template_getLotteryResult();
+                    }
+                } else {
+                    console.log('你没有抽奖机会拉');
                 }
-            } else {
-                console.log('你没有抽奖机会拉');
             }
         }
     }

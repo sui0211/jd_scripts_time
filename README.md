@@ -18,8 +18,7 @@ https://github.com/wsn888/jd.git （脚本群大佬临时活动库）
 
 中价值（京豆较少）
 1. 首页领京豆【完成】          -jd_bean_home.js
-2. 多合一签到【完成】          -jd_bean_sign.js
-3. 送豆得豆【完成】            -jd_sendBeans.js
+2. 送豆得豆【完成】            -jd_sendBeans.js
 
 低价值（无需变更和引入代理ip的）
 1. 京东价保【完成】            -jd_price.js

@@ -1,6 +1,7 @@
 /*
 年货节红包
-cron 0 0,20 * * *  https://raw.githubusercontent.com/smiek2121/scripts/master/gua_nhjRed.js
+30 23 * * * jd_speed_redpocke.js, tag=年货节红包23:30运行
+cron "30 23 * * *" tag=年货节红包23:30运行
 整点跑 红包几率大点
 
 https://u.jd.com/SCLyQi4
